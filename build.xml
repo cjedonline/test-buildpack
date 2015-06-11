@@ -4,10 +4,11 @@
 	<taskdef resource="net/sf/antcontrib/antlib.xml"/>
 	
 	<property name="karaf.deploy.dir" location="${anttest.dir}" />
+	<property name="archive.propertyfile" value="bpmmicroservice.xml" />
 	
 	<target name="dostuff" >
 	
-		<xmlproperty file="bpmmicroservice.xml" collapseAttributes="true"/>
+		<xmlproperty file="${archive.propertyfile}" collapseAttributes="true"/>
 		
 		<echo>archives.baseurl = ${archives.baseurl}</echo>
 		<echo>archives.archive.name = ${archives.archive.name}</echo>
