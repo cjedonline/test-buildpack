@@ -7,7 +7,7 @@
 	
 	<target name="dostuff" >
 	
-		<xmlproperty file="bpmmicroservices.xml" collapseAttributes="true"/>
+		<xmlproperty file="bpmmicroservice.xml" collapseAttributes="true"/>
 		
 		<echo>archives.baseurl = ${archives.baseurl}</echo>
 		<echo>archives.archive.name = ${archives.archive.name}</echo>
