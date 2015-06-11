@@ -34,7 +34,7 @@ karaf_dist_url=$jenkins_baseurl/job/bpm-karaf-dist/lastSuccessfulBuild/artifact/
 
 wget $swdist_url/jre-7u76-linux-x64.gz > stuff.log
 wget $karaf_dist_url >> stuff.log
-wget $swdist_url/apache-ant-1.7.1-bin.zip >> stuff.log
+wget $swdist_url/apache-ant-1.9.3-bin.zip >> stuff.log
 wget $swdist_url/ant-contrib-1.0b3.jar >> stuff.log
 
 #
@@ -42,7 +42,7 @@ wget $swdist_url/ant-contrib-1.0b3.jar >> stuff.log
 
 tar xzf tibco-karaf-1.0.0-SNAPSHOT.tar.gz >> stuff.log
 tar xzf jre-7u76-linux-x64.gz >> stuff.log
-unzip apache-ant-1.7.1-bin.zip
+unzip apache-ant-1.9.3-bin.zip
 
 # remove versions from directories
 mv $cache_dir/tibco-karaf-1.0.0-SNAPSHOT $cache_dir/karaf
@@ -50,7 +50,7 @@ mv $cache_dir/jre1.7.0_76 $cache_dir/jre
 
 # Set up and run Ant script to get the Kar archives to deploy into Karaf
 JAVA_HOME=$cache_dir/jre
-ANT_HOME=$cache_dir/apache-ant-1.7.1
+ANT_HOME=$cache_dir/apache-ant-1.9.3
 PATH=$JAVA_HOME/bin:$ANT_HOME/bin:$PATH
 mv ant-contrib-1.0b3.jar $ANT_HOME/lib
 ant -f $buildpack_dir/build.xml "-Dkaraf.deploy.dir=$cache_dir/karaf/deploy" "-Darchive.propertyfile=$buildpack_dir/bpmmicroservice.xml" dostuff
