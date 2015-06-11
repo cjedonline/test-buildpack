@@ -40,9 +40,9 @@ wget $swdist_url/ant-contrib-1.0b3.jar >> stuff.log
 #
 # unpack Java, Ant and Karaf
 
-tar xzf tibco-karaf-1.0.0-SNAPSHOT.tar.gz >> stuff.log
-tar xzf jre-7u76-linux-x64.gz >> stuff.log
-unzip apache-ant-1.9.3-bin.zip
+tar xzf tibco-karaf-1.0.0-SNAPSHOT.tar.gz >> stuff.log 2>&1
+tar xzf jre-7u76-linux-x64.gz >> stuff.log 2>&1
+unzip apache-ant-1.9.3-bin.zip >> stuff.log 2>&1
 
 # remove versions from directories
 mv $cache_dir/tibco-karaf-1.0.0-SNAPSHOT $cache_dir/karaf
