@@ -23,7 +23,13 @@
 				<for list="${archives.archive.name}" param="karname" >
 					<sequential>
 						<echo>Get Kar Archive : ${archives.baseurl}/@{karname}</echo>
-						<get src="${archives.baseurl}/@{karname}" dest="${karaf.deploy.dir}" />
+
+						<exec executable="wget" failonerror="true" >
+							<arg value="-nv" />
+							<arg value="${archives.baseurl}/@{karname}" />
+							<arg value="-O" />
+							<arg value="${karaf.deploy.dir}/@{karname}" />
+						</exec>
 					</sequential>
 				</for>
 			</then>
@@ -34,8 +40,16 @@
 			<then>
 				<for list="${archives.archive.url}" param="karurl" >
 					<sequential>
+						<local name="archive.filename" />
+						<basename property="archive.filename" file="@{karurl}" />
 						<echo>Get Kar Archive : @{karurl}</echo>
-						<get src="@{karurl}" dest="${karaf.deploy.dir}" />
+
+						<exec executable="wget" failonerror="true" >
+							<arg value="-nv" />
+							<arg value="@{karurl}" />
+							<arg value="-O" />
+							<arg value="${karaf.deploy.dir}/${archive.filename}" />
+						</exec>
 					</sequential>
 				</for>
 			</then>
