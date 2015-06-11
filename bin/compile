@@ -53,7 +53,7 @@ JAVA_HOME=$cache_dir/jre
 ANT_HOME=$cache_dir/apache-ant-1.9.3
 PATH=$JAVA_HOME/bin:$ANT_HOME/bin:$PATH
 mv ant-contrib-1.0b3.jar $ANT_HOME/lib
-ant -f $buildpack_dir/build.xml "-Dkaraf.deploy.dir=$cache_dir/karaf/deploy" "-Darchive.propertyfile=$buildpack_dir/bpmmicroservice.xml" dostuff
+ant -f $buildpack_dir/build.xml "-Dkaraf.deploy.dir=$cache_dir/karaf/deploy" "-Darchive.propertyfile=$app_files_dir/bpmmicroservice.xml" dostuff
 
 # add the webconsole to the Karaf install set
 # sed "s#\(^featuresRepositories.*\)mvn:org.apache.karaf.features\/enterprise\/3.0.3\/xml/features,\(.*$\)#\1\2#" "$cache_dir/karaf/etc/org.apache.karaf.features.cfg" > org.apache.karaf.features.cfg
