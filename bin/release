@@ -1,0 +1,12 @@
+#!/bin/bash
+
+BUILD_DIR=$1
+
+# Don't be fooled by the examples. The config_vars key gets ignored on cloudfoundry.
+# It was just added to create a semblance of heroku compatibility
+
+cat <<YAML
+---
+default_process_types:
+    web: ./launch.sh
+YAML
