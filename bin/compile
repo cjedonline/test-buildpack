@@ -24,7 +24,7 @@ env
 mkdir -p $cache_dir
 cd $cache_dir
 
-swdist_url=http://10.100.87.149/software/cjedtest
+swdist_url=http://10.100.87.79/software/cjedtest
 jenkins_baseurl=http://10.100.87.118:8282
 
 karaf_dist_url=$jenkins_baseurl/job/bpm-karaf-dist/lastSuccessfulBuild/artifact/src/karaf/tibco-karaf/target/tibco-karaf-1.0.0-SNAPSHOT.tar.gz
